@@ -1,19 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage("build"){
+        stage("run frontend"){
             steps {
-                echo 'building the application'
-            }
-        }
-        stage("test"){
-            steps {
-                echo 'testing the application'
-            }
-        }
-        stage("deploy"){
-            steps {
-                echo 'deploying the application'
+                echo 'starting react app'
+                nodejs('Node-18'){
+                    sh 'npm install'
+                }
             }
         }
     }
