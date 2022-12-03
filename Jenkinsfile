@@ -5,7 +5,11 @@ pipeline {
             steps {
                 echo 'starting react app'
                 nodejs('Node-18'){
-                    sh 'npm install'
+                    // cd into my-app directory
+                    dir("my-app"){
+                        sh 'npm install'
+                    }
+                    
                 }
             }
         }
